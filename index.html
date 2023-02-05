@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather Report</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/1026434103001743430/1071731777137299577/sunny.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">☀️Weather</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Location
+              </a>
+              <ul class="dropdown-menu">
+                <li><button id="Delhi" class="dropdown-item drop_location" value="Delhi">Delhi</button></li>
+                <li><button id="Mumbai" class="dropdown-item drop_location" value="Mumbai">Mumbai</button></li>
+                <li><button id="Bengaluru" class="dropdown-item drop_location" value="Bengaluru">Bengaluru</button></li>
+                <li><button id="Ahmedabad" class="dropdown-item drop_location" value="Ahmedabad">Ahmedabad</button></li>
+                <li><button id="Chennai" class="dropdown-item drop_location" value="Chennai">Chennai</button></li>
+                <li><button id="Kolkata" class="dropdown-item drop_location" value="Kolkata">Kolkata</button></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button id="search-btn-id" class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div id="main-display">
+        <div id="display-left" class="display-item">
+            <p>City: <span class="city">---</span></p>
+            <p>Date: <span id="R_date">--/--/--</span></p>
+            <p id="hero">Geo Location: <br><span id="g_location">-- ---</span></p>
+        </div>
+        <div id="display-center" class="display-item">
+            <p><span id="R_time">-- -- --</span></p>
+            <p><span id="temp">--</span>°C</p>
+            <div id="info">
+                <p>Feels-like:  <span id="feels-like">--</span>°C</p>
+                <p>Temp-min:  <span id="temp-min">--</span>°C</p>
+                <p>Temp-max:  <span id="temp-max">--</span>°C</p>
+            </div>
+        </div>
+        <div id="display-right" class="display-item">
+            <img src="https://cdn.discordapp.com/attachments/1026434103001743430/1071731790978482218/cloudy.png" alt="weather-icon" id="icon">
+            <p><span id="description">---</span></p>
+        </div>
+    </div>
+
+    <div class="weather-card">
+      <div class="card text-center">
+        <div class="card-header">Monday</div>
+        <div class="card-body">
+          <h5 class="card-title"><span class="o_City" style="font-size: 14px;" value="">London</span></h5>
+          <h5 class="card-title"><span class="o_Temp">5</span>°C</h5>
+        </div>
+      </div>
+
+      <div class="card text-center">
+        <div class="card-header">Tuesday</div>
+        <div class="card-body">
+          <h5 class="card-title"><span class="o_City" style="font-size: 14px;" value="">Tokyo</span></h5>
+          <h5 class="card-title"><span class="o_Temp">2.32</span>°C</h5>
+        </div>
+      </div>
+
+      <div class="card text-center">
+        <div class="card-header">Wednesday</div>
+        <div class="card-body">
+          <h5 class="card-title"><span class="o_City" style="font-size: 14px;" value="">Berlin</span></h5>
+          <h5 class="card-title"><span class="o_Temp">-1</span>°C</h5>
+        </div>
+      </div>
+
+      <div class="card text-center">
+        <div class="card-header">Thursday</div>
+        <div class="card-body">
+          <h5 class="card-title"><span class="o_City" style="font-size: 14px;" value="">Washington</span></h5>
+          <h5 class="card-title"><span class="o_Temp">1</span>°C</h5>
+        </div>
+      </div>
+
+      <div class="card text-center">
+        <div class="card-header">Friday</div>
+        <div class="card-body">
+          <h5 class="card-title"><span class="o_City" style="font-size: 14px;" value="">New York</span></h5>
+          <h5 class="card-title"><span class="o_Temp">-1.6</span>°C</h5>
+        </div>
+      </div>
+
+      <div class="card text-center">
+        <div class="card-header">Saturday</div>
+        <div class="card-body">
+          <h5 class="card-title"><span class="o_City" style="font-size: 14px;" value="">Florida</span></h5>
+          <h5 class="card-title"><span class="o_Temp">21</span>°C</h5>
+        </div>
+      </div>
+
+      <div class="card text-center">
+        <div class="card-header">Sunday</div>
+        <div class="card-body">
+          <h5 class="card-title"><span class="o_City" style="font-size: 14px;" value="">Dubai </span></h5>
+          <h5 class="card-title"><span class="o_Temp">23</span>°C</h5>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
